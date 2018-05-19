@@ -3,12 +3,19 @@ import javafx.embed.swing.JFXPanel;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.Normalizer;
 
 public class FormMain {
     private JPanel panelMain;
     private JButton buttonAdminSetTeamInfo;
     private JButton buttonAdminSetEventInfo;
     private JButton buttonTeamSignUp;
+    private JButton buttonAthleteEntry;
+    private JButton buttonAssignAthleteGroup;
+    private JButton buttonQueryAthleteGroup;
+    private JButton buttonJudgeAthleteScore;
+    private JButton buttonQueryAthleteScore;
+    private JButton buttonQueryTeamRanking;
     private JFrame frame;
 
     public FormMain() {
@@ -35,6 +42,42 @@ public class FormMain {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new FormTeamSignUp();
+            }
+        });
+        buttonAthleteEntry.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FormAthleteEntry();
+            }
+        });
+        buttonAssignAthleteGroup.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FormAssignAthleteGroup();
+            }
+        });
+        buttonQueryAthleteGroup.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FormQueryAthleteGroup();
+            }
+        });
+        buttonJudgeAthleteScore.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FormQueryAthleteScore();
+            }
+        });
+        buttonQueryAthleteScore.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FormQueryAthleteScore();
+            }
+        });
+        buttonQueryTeamRanking.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FormQueryTeamRanking();
             }
         });
     }

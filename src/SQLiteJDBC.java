@@ -316,4 +316,34 @@ public class SQLiteJDBC {
         }
         return rs;
     }
+
+    public static ResultSet QueryAthleteEntry(){
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs = null;
+
+        try {
+            executeSql = "SELECT AthleteName, AthleteID, AthleteAge, AthleteSex, AgeGroup, TeamName, AthleteNumber FROM AthleteEntry";
+            preparedStatement = conn.prepareStatement(executeSql);
+            rs = preparedStatement.executeQuery();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return rs;
+    }
+
+    public static ResultSet QueryAthleteEvent(){
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs =null;
+
+        try {
+            executeSql = "SELECT AthleteName, AthleteID, EventName FROM AthleteEntry NATURAL JOIN PreAthleteEvent";
+            preparedStatement = conn.prepareStatement(executeSql);
+            rs = preparedStatement.executeQuery();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return rs;
+    }
 }
