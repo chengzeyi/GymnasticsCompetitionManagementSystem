@@ -11,6 +11,8 @@ public class FormSetOrUpdateEventInfo {
     private JTextField textFieldMaxOnCourtPeopleNumberPerGame;
     private JTextField textFieldTeamScoreThresholdPeopleNumber;
     private JPanel panelSetOrUpdateEventInfo;
+    private JRadioButton radioButtonMale;
+    private JRadioButton radioButtonFemale;
 
 
     public FormSetOrUpdateEventInfo() {
@@ -28,15 +30,39 @@ public class FormSetOrUpdateEventInfo {
                 String maxPeopleNumberPerTeam = textFieldMaxPeopleNumberPerTeam.getText();
                 String maxOnCourtPeopleNumberPerGame = textFieldMaxOnCourtPeopleNumberPerGame.getText();
                 String teamScoreThresholdPeopleNumber = textFieldTeamScoreThresholdPeopleNumber.getText();
-                SQLiteJDBC.adminSetEventInfo(eventName, maxPeopleNumberPerTeam, maxOnCourtPeopleNumberPerGame, teamScoreThresholdPeopleNumber);
-                JOptionPane.showMessageDialog(frame,"Set or update event info: procedure finished");
-                frame.dispose();
+                int athleteSex;
+                if (radioButtonMale.isSelected()) {
+                    athleteSex = 0;
+                } else if (radioButtonFemale.isSelected()){
+                    athleteSex = 1;
+                } else {
+                    athleteSex = -1;
+                }
+                if(eventName.isEmpty() || maxPeopleNumberPerTeam.isEmpty() || maxOnCourtPeopleNumberPerGame.isEmpty() || teamScoreThresholdPeopleNumber.isEmpty() || athleteSex == -1){
+                    JOptionPane.showMessageDialog(frame, "Event Info Is Not Complete");
+                } else {
+                    SQLiteJDBC.adminSetEventInfo(eventName, maxPeopleNumberPerTeam, maxOnCourtPeopleNumberPerGame, teamScoreThresholdPeopleNumber, athleteSex);
+                    JOptionPane.showMessageDialog(frame,"Set Or Update Event Info: Procedure Finished");
+                    frame.dispose();
+                }
             }
         });
         buttonCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
+            }
+        });
+        radioButtonMale.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                radioButtonFemale.setSelected(false);
+            }
+        });
+        radioButtonFemale.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                radioButtonMale.setSelected(false);
             }
         });
     }

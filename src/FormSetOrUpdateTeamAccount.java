@@ -25,9 +25,13 @@ public class FormSetOrUpdateTeamAccount {
                 String teamName = textFieldTeamName.getText();
                 String teamAccount = textFieldTeamAccount.getText();
                 String teamPassword = textFieldTeamPassword.getText();
-                SQLiteJDBC.adminSetTeamInfo(teamName, teamAccount, teamPassword);
-                JOptionPane.showMessageDialog(frame, "Set or update team account: procedure finished");
-                frame.dispose();
+                if (teamName.isEmpty() || teamAccount.isEmpty() || teamPassword.isEmpty()){
+                    JOptionPane.showMessageDialog(frame, "Team Account Info Is Not Complete");
+                } else {
+                    SQLiteJDBC.adminSetTeamInfo(teamName, teamAccount, teamPassword);
+                    JOptionPane.showMessageDialog(frame, "Set Or Update Team Account: Procedure Finished");
+                    frame.dispose();
+                }
             }
         });
         buttonCancel.addActionListener(new ActionListener() {

@@ -22,7 +22,7 @@ public class FormAdminSetEventInfo {
         frame.pack();
         frame.setVisible(true);
 
-        columnNames = new String[]{"Event Name", "Max People Number Per Team", "Max On Court People Number Per Game", "Team Score Threshold People Number"};
+        columnNames = new String[]{"Event Name", "Max People Number Per Team", "Max On Court People Number Per Game", "Team Score Threshold People Number", "Athlete Sex"};
         defaultTableModel = new DefaultTableModel();
         defaultTableModel.setColumnIdentifiers(columnNames);
         try {

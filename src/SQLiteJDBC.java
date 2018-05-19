@@ -73,7 +73,7 @@ public class SQLiteJDBC {
         System.out.println("Finished setting TeamInfo by admin");
     }
 
-    public static void adminSetEventInfo(String eventName, String maxPeopleNumberPerTeam, String maxOnCourtPeopleNumberPerGame, String teamScoreThresholdPeopleNumber) {
+    public static void adminSetEventInfo(String eventName, String maxPeopleNumberPerTeam, String maxOnCourtPeopleNumberPerGame, String teamScoreThresholdPeopleNumber, int athleteSex) {
         boolean find = false;
         String executeSql;
         PreparedStatement preparedStatement;
@@ -92,12 +92,13 @@ public class SQLiteJDBC {
         if(find){
             System.out.println("EventName exists, trying to update table");
             try {
-                executeSql = "UPDATE EventInfo SET MaxPeopleNumberPerTeam = ?, MaxOnCourtPeopleNumberPerGame = ?, TeamScoreThresholdPeopleNumber = ? WHERE EventName = ?";
+                executeSql = "UPDATE EventInfo SET MaxPeopleNumberPerTeam = ?, MaxOnCourtPeopleNumberPerGame = ?, TeamScoreThresholdPeopleNumber = ?, AthleteSex = ? WHERE EventName = ?";
                 preparedStatement = conn.prepareStatement(executeSql);
                 preparedStatement.setString(1, maxPeopleNumberPerTeam);
                 preparedStatement.setString(2, maxOnCourtPeopleNumberPerGame);
                 preparedStatement.setString(3, teamScoreThresholdPeopleNumber);
-                preparedStatement.setString(4, eventName);
+                preparedStatement.setInt(4, athleteSex);
+                preparedStatement.setString(5, eventName);
                 preparedStatement.executeUpdate();
             } catch (Exception e){
                 e.printStackTrace();
@@ -307,7 +308,7 @@ public class SQLiteJDBC {
         ResultSet rs = null;
 
         try {
-            executeSql = "SELECT EventName, MaxPeopleNumberPerTeam, MaxOnCourtPeopleNumberPerGame, TeamScoreThresholdPeopleNumber FROM EventInfo";
+            executeSql = "SELECT EventName, MaxPeopleNumberPerTeam, MaxOnCourtPeopleNumberPerGame, TeamScoreThresholdPeopleNumber, AthleteSex FROM EventInfo";
             preparedStatement = conn.prepareStatement(executeSql);
             rs = preparedStatement.executeQuery();
         } catch (Exception e){
