@@ -7,22 +7,9 @@
     <bookmark url="file://$PROJECT_DIR$/src/SQLiteJDBC.java" line="44" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb7b8a24-cfc6-43be-b214-72f31114beda" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/FormAssignAthleteGroup.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormAssignAthleteGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormAthleteEntry.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormAthleteEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormJudgeAthleteScore.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormJudgeAthleteScore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormQueryAthleteGroup.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormSetAthleteInfo.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormSetAthleteInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/92d77308-f956-423b-865c-366f886c352c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/92d77308-f956-423b-865c-366f886c352c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GymnasticsCompetition.db" beforeDir="false" afterPath="$PROJECT_DIR$/GymnasticsCompetition.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FormMain.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormMain.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FormMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SQLiteJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SQLiteJDBC.java" afterDir="false" />
+    <list default="true" id="fb7b8a24-cfc6-43be-b214-72f31114beda" name="Default" comment="developing">
+      <change beforePath="$PROJECT_DIR$/src/FormSetAthleteInfo.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormSetAthleteInfo.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FormSetAthleteInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormSetAthleteInfo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,7 +43,7 @@
       <file leaf-file-name="FormMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FormMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="745">
+            <state relative-caret-position="728">
               <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
               <folding>
                 <element signature="e#1097#1098#0" expanded="true" />
@@ -82,11 +69,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormAssignAthleteGroup.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FormAssignAthleteGroup.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
       <file leaf-file-name="SQLiteJDBC.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SQLiteJDBC.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -110,28 +92,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FormMain.form" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FormMain.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FormMain.form">
           <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
-      <file leaf-file-name="FormQueryAthleteScore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FormQueryAthleteScore.java">
+      <file leaf-file-name="FormJudgeAthleteScore.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FormJudgeAthleteScore.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file leaf-file-name="FormSetAthleteInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FormSetAthleteInfo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="31" column="53" lean-forward="true" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="316">
+              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FormSetAthleteInfo.form" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/FormSetAthleteInfo.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
       <file leaf-file-name="FormQueryTeamRanking.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FormQueryTeamRanking.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+            <state relative-caret-position="108">
+              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
               <folding>
                 <element signature="e#1953#1954#0" expanded="true" />
                 <element signature="e#2000#2001#0" expanded="true" />
@@ -152,11 +141,6 @@
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormQueryTeamRanking.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FormQueryTeamRanking.form">
-          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
       <file leaf-file-name="FormQueryAthleteScore.form" pinned="false" current-in-tab="false">
@@ -195,7 +179,6 @@
         <option value="$PROJECT_DIR$/src/FormSetOrUpdateTeamAccount.java" />
         <option value="$PROJECT_DIR$/src/SQLiteJDBC.java" />
         <option value="$PROJECT_DIR$/src/FormAthleteEntry.form" />
-        <option value="$PROJECT_DIR$/src/FormSetAthleteInfo.form" />
         <option value="$PROJECT_DIR$/src/FormAssignGroup.form" />
         <option value="$PROJECT_DIR$/src/FormAssignGroup.java" />
         <option value="$PROJECT_DIR$/src/FormSetAthleteInfo.java" />
@@ -209,6 +192,8 @@
         <option value="$PROJECT_DIR$/src/FormQueryTeamRanking.form" />
         <option value="$PROJECT_DIR$/src/FormMain.java" />
         <option value="$PROJECT_DIR$/src/FormMain.form" />
+        <option value="$PROJECT_DIR$/src/FormQueryAthleteScore.form" />
+        <option value="$PROJECT_DIR$/src/FormSetAthleteInfo.form" />
       </list>
     </option>
   </component>
@@ -227,7 +212,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="28" />
     <option name="y" value="-12" />
     <option name="width" value="981" />
@@ -321,7 +306,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="140" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="258" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="242" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
@@ -480,12 +465,12 @@
       <workItem from="1526381954138" duration="29000" />
       <workItem from="1526701943590" duration="919000" />
       <workItem from="1526706841890" duration="1342000" />
-      <workItem from="1526715799072" duration="10790000" />
+      <workItem from="1526715799072" duration="11921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101436000" />
+    <option name="totallyTimeSpent" value="102567000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -498,23 +483,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32545453" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3291592" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32795697" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32983023" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32795697" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32616487" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4014337" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32795697" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32616487" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3144705" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12045271" />
       <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.32795697" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.105092965" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32795697" />
@@ -523,7 +507,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39784947" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39784947" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="8" weight="0.3291592" />
@@ -565,7 +549,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="developing" />
+    <option name="LAST_COMMIT_MESSAGE" value="developing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -749,9 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FormSetAthleteInfo.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FormAdminSetTeamInfo.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
@@ -778,16 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FormSetAthleteInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FormJudgeAthleteScore.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FormJudgeAthleteScore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -813,26 +785,12 @@
     <entry file="file://$PROJECT_DIR$/src/FormQueryAthleteGroup.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FormQueryAthleteScore.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FormQueryAthleteScore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="31" column="53" lean-forward="true" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FormQueryTeamRanking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-          <folding>
-            <element signature="e#1953#1954#0" expanded="true" />
-            <element signature="e#2000#2001#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -874,9 +832,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/FormQueryAthleteScore.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FormQueryTeamRanking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+          <folding>
+            <element signature="e#1953#1954#0" expanded="true" />
+            <element signature="e#2000#2001#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FormMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
+        <state relative-caret-position="728">
           <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
           <folding>
             <element signature="e#1097#1098#0" expanded="true" />
@@ -902,6 +874,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FormMain.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FormJudgeAthleteScore.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FormSetAthleteInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FormSetAthleteInfo.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>

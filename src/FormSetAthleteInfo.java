@@ -14,7 +14,8 @@ public class FormSetAthleteInfo {
     private JComboBox comboBoxEventName2;
     private JComboBox comboBoxEventName3;
     private JComboBox comboBoxAthleteAge;
-    private JComboBox comboBox5;
+    private JComboBox comboBoxTeamName;
+    private JButton buttonSubmit;
 
     public FormSetAthleteInfo(){
         frame = new JFrame("Set Athlete Info");
