@@ -34,7 +34,7 @@ public class FormAthleteEntry {
         defaultTableModelAthleteEntry.setColumnIdentifiers(columnNamesAthleteEntry);
         defaultTableModelAthleteEvent.setColumnIdentifiers(columnNamesAthleteEvent);
         try {
-            ResultSet resultSet = SQLiteJDBC.QueryAthleteEntry();
+            ResultSet resultSet = SQLiteJDBC.queryAthleteEntry();
             int columnCount = resultSet.getMetaData().getColumnCount();
             while (resultSet.next()){
                 Object[] objects = new Object[columnCount];
@@ -48,7 +48,7 @@ public class FormAthleteEntry {
         }
         tableAthleteEntry.setModel(defaultTableModelAthleteEntry);
         try {
-            ResultSet resultSet = SQLiteJDBC.QueryAthleteEvent();
+            ResultSet resultSet = SQLiteJDBC.queryAthleteEvent();
             int columnCount = resultSet.getMetaData().getColumnCount();
             while (resultSet.next()){
                 Object[] objects = new Object[columnCount];
@@ -68,7 +68,7 @@ public class FormAthleteEntry {
                 defaultTableModelAthleteEntry.setRowCount(0);
                 defaultTableModelAthleteEvent.setRowCount(0);
                 try {
-                    ResultSet resultSet = SQLiteJDBC.QueryAthleteEntry();
+                    ResultSet resultSet = SQLiteJDBC.queryAthleteEntry();
                     int columnCount = resultSet.getMetaData().getColumnCount();
                     while (resultSet.next()){
                         Object[] objects = new Object[columnCount];
@@ -81,7 +81,7 @@ public class FormAthleteEntry {
                     exception.printStackTrace();
                 }
                 try {
-                    ResultSet resultSet = SQLiteJDBC.QueryAthleteEvent();
+                    ResultSet resultSet = SQLiteJDBC.queryAthleteEvent();
                     int columnCount = resultSet.getMetaData().getColumnCount();
                     while (resultSet.next()){
                         Object[] objects = new Object[columnCount];

@@ -90,12 +90,14 @@ public class FormTeamSignUp {
         radioButtonMale.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                radioButtonMale.setSelected(true);
                 radioButtonFemale.setSelected(false);
             }
         });
         radioButtonFemale.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                radioButtonFemale.setSelected(true);
                 radioButtonMale.setSelected(false);
             }
         });

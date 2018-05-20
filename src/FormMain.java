@@ -65,7 +65,7 @@ public class FormMain {
         buttonJudgeAthleteScore.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new FormQueryAthleteScore();
+                new FormJudgeAthleteScore();
             }
         });
         buttonQueryAthleteScore.addActionListener(new ActionListener() {

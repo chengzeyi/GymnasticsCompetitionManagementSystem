@@ -8,35 +8,56 @@ public class FormQueryAthleteScore {
     private JButton buttonQuery;
     private JTextField textFieldEventName;
     private JTextField textFieldAthleteID;
-    private JPanel panelQueryScore;
+    private JPanel JpanelQueryScore;
+    private JRadioButton PRERadioButton;
+    private JRadioButton FINALRadioButton;
     private DefaultTableModel defaultTableModel;
     private String[] columnNames;
-    private String score;
-    // ResultSet Score;
+String   Score;
+Boolean ChoosePre;
+   // ResultSet Score;
 
     public FormQueryAthleteScore() {
         frame = new JFrame("Query Score");
         frame.setLocationByPlatform(true);
-        frame.setContentPane(this.panelQueryScore);
+        frame.setContentPane(this.JpanelQueryScore);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        ButtonGroup PreOrFinal= new ButtonGroup();
+        PreOrFinal.add(FINALRadioButton);
+        PreOrFinal.add(PRERadioButton);
+
+        FINALRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChoosePre = false;
+            }
+        });
+        PRERadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ChoosePre = true;
+            }
+        });
+
 
         buttonQuery.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String eventName = textFieldEventName.getText();
                 String AthleteID = textFieldAthleteID.getText();
-
-                // score = SQLiteJDBC.QueryScore(eventName, AthleteID);
-                JOptionPane.showMessageDialog(frame, "your Score is" + score);
+                if(ChoosePre)
+                Score = SQLiteJDBC.queryPreScore(eventName, AthleteID);
+                else
+                    Score = SQLiteJDBC.queryFinalScore(eventName, AthleteID);
+                JOptionPane.showMessageDialog(frame, "your Score is" + Score);
                 frame.dispose();
             }
         });
     }
-
     public static void main (String args[]){
-        SQLiteJDBC.openConnection();
         new FormQueryAthleteScore();
     }
+
 }

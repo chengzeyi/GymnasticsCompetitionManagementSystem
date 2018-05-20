@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FormSetAthleteInfo {
     private JFrame frame;
@@ -24,6 +26,20 @@ public class FormSetAthleteInfo {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        radioButtonMale.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                radioButtonMale.setSelected(true);
+                radioButtonFemale.setSelected(false);
+            }
+        });
+        radioButtonFemale.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                radioButtonFemale.setSelected(true);
+                radioButtonMale.setSelected(false);
+            }
+        });
     }
 
 

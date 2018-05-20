@@ -317,7 +317,7 @@ public class SQLiteJDBC {
         return rs;
     }
 
-    public static ResultSet QueryAthleteEntry(){
+    public static ResultSet queryAthleteEntry(){
         String executeSql;
         PreparedStatement preparedStatement;
         ResultSet rs = null;
@@ -332,10 +332,10 @@ public class SQLiteJDBC {
         return rs;
     }
 
-    public static ResultSet QueryAthleteEvent(){
+    public static ResultSet queryAthleteEvent(){
         String executeSql;
         PreparedStatement preparedStatement;
-        ResultSet rs =null;
+        ResultSet rs = null;
 
         try {
             executeSql = "SELECT AthleteName, AthleteID, EventName FROM AthleteEntry NATURAL JOIN PreAthleteEvent";
@@ -345,5 +345,217 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
         return rs;
+    }
+
+    public static String queryPreScore(String eventName, String athleteID){
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs = null;
+        String rse = "1";
+
+        try {
+            executeSql = "SELECT Score FROM PreAthleteScore WHERE EventName = ? and AthleteID = ?";
+            preparedStatement = conn.prepareStatement(executeSql);
+            preparedStatement.setString(1, eventName);
+            preparedStatement.setString(2,athleteID);
+            rs = preparedStatement.executeQuery();
+            rse=rs.getString(1);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return rse;
+    }
+
+    public static String queryFinalScore(String eventName, String athleteID){
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs = null;
+        String rse = "1";
+
+        try {
+            executeSql = "SELECT Score FROM FinalAthleteScore WHERE EventName = ? and AthleteID = ?";
+            preparedStatement = conn.prepareStatement(executeSql);
+            preparedStatement.setString(1, eventName);
+            preparedStatement.setString(2,athleteID);
+            rs = preparedStatement.executeQuery();
+            rse = rs.getString(1);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return rse;
+    }
+
+    public static String queryGroup(String eventName, String athleteID){
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs = null;
+        String rse = "1";
+
+        try {
+            executeSql = "SELECT EventGroup FROM FinalAthleteEvent WHERE EventName = ? and AthleteID = ?";
+            preparedStatement = conn.prepareStatement(executeSql);
+            preparedStatement.setString(1, eventName);
+            preparedStatement.setString(2,athleteID);
+            rs = preparedStatement.executeQuery();
+            rse = rs.getString(1);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return rse;
+    }
+
+    public static void assignGroup(String eventName, String athleteID, String group) {
+        boolean find = false;
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs;
+
+        System.out.println("Checking if EventName and AthleteID exist");
+        try {
+            executeSql = "SELECT * FROM FinalAthleteEvent WHERE EventName = ? and AthleteID=?";
+            preparedStatement = conn.prepareStatement(executeSql);
+            preparedStatement.setString(1, eventName);
+            preparedStatement.setString(2, athleteID);
+            rs = preparedStatement.executeQuery();
+            find = rs.next();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (find) {
+            System.out.println("EventName and AthleteID exist, trying to update table");
+            try {
+                executeSql = "UPDATE FinalAthleteEvent SET EventName = ?, AthleteID = ?, EventGroup = ?";
+                preparedStatement = conn.prepareStatement(executeSql);
+                preparedStatement.setString(1, eventName);
+                preparedStatement.setString(2, athleteID);
+                preparedStatement.setString(3, group);
+                // preparedStatement.setString(4, eventName);
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("EventName and AthleteID don't exist, trying to insert into table");
+            try {
+                executeSql = "INSERT INTO FinalAthleteEvent (EventName, AthleteID,EventGroup) VALUES (?, ?, ?)";
+                preparedStatement = conn.prepareStatement(executeSql);
+                preparedStatement.setString(1, eventName);
+                preparedStatement.setString(2, athleteID);
+                preparedStatement.setString(3, group);
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Finished assigning group");
+    }
+
+    public static ResultSet queryTeamRanking() {
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs = null;
+
+        try {
+            executeSql = "SELECT TeamName, SUM(Score) FROM FinalAthleteScore NATURAL JOIN AthleteEntry group by TeamName order by sum(Score) DESC";
+            preparedStatement = conn.prepareStatement(executeSql);
+            //  preparedStatement.setString(1, eventName);
+            rs = preparedStatement.executeQuery();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rs;
+    }
+
+    public static void judgeFinalScore(String eventName, String athleteID, String score) {
+        boolean find = false;
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs;
+
+        System.out.println("Checking if EventName and AthleteID exist");
+        try {
+            executeSql = "SELECT * FROM FinalAthleteScore WHERE EventName = ? and AthleteID = ?";
+            preparedStatement = conn.prepareStatement(executeSql);
+            preparedStatement.setString(1, eventName);
+            preparedStatement.setString(2, athleteID);
+            rs = preparedStatement.executeQuery();
+            find = rs.next();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (find) {
+            System.out.println("EventName and AthleteID exist, trying to update table");
+            try {
+                executeSql = "UPDATE FinalAthleteScore SET EventName = ?, AthleteID = ?, Score = ?";
+                preparedStatement = conn.prepareStatement(executeSql);
+                preparedStatement.setString(1, eventName);
+                preparedStatement.setString(2, athleteID);
+                preparedStatement.setString(3, score);
+                // preparedStatement.setString(4, eventName);
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("EventName and AthleteID don't exist, trying to insert into table");
+            try {
+                executeSql = "INSERT INTO FinalAthleteScore (EventName, AthleteID, Score) VALUES (?, ?, ?)";
+                preparedStatement = conn.prepareStatement(executeSql);
+                preparedStatement.setString(1, eventName);
+                preparedStatement.setString(2, athleteID);
+                preparedStatement.setString(3, score);
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Finished setting EventInfo by admin");
+    }
+
+    public static void judgePreScore(String eventName, String athleteID, String score) {
+        boolean find = false;
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs;
+
+        String checking_if_eventName_exists = "Checking if EventName and AthleteID exist";
+        System.out.println(checking_if_eventName_exists);
+        try {
+            executeSql = "SELECT * FROM PreAthleteScore WHERE EventName = ? and AthleteID= ?";
+            preparedStatement = conn.prepareStatement(executeSql);
+            preparedStatement.setString(1, eventName);
+            preparedStatement.setString(2, athleteID);
+            rs = preparedStatement.executeQuery();
+            find = rs.next();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (find) {
+            System.out.println("EventName and AthleteID exist, trying to update table");
+            try {
+                executeSql = "UPDATE PreAthleteScore SET EventName = ?, AthleteID= ?, Score = ?";
+                preparedStatement = conn.prepareStatement(executeSql);
+                preparedStatement.setString(1, eventName);
+                preparedStatement.setString(2, athleteID);
+                preparedStatement.setString(3, score);
+                // preparedStatement.setString(4, eventName);
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("EventName and AthleteID don't exist, trying to insert into table");
+            try {
+                executeSql = "INSERT INTO PreAthleteScore(EventName, AthleteID,Score) VALUES (?, ?, ?)";
+                preparedStatement = conn.prepareStatement(executeSql);
+                preparedStatement.setString(1, eventName);
+                preparedStatement.setString(2, athleteID);
+                preparedStatement.setString(3, score);
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Finished judging pre score");
     }
 }
