@@ -8,36 +8,36 @@ public class FormQueryAthleteScore {
     private JButton buttonQuery;
     private JTextField textFieldEventName;
     private JTextField textFieldAthleteID;
-    private JPanel JpanelQueryScore;
-    private JRadioButton PRERadioButton;
-    private JRadioButton FINALRadioButton;
+    private JPanel panelQueryScore;
+    private JRadioButton radioButtonPre;
+    private JRadioButton radioButtonFianl;
     private DefaultTableModel defaultTableModel;
     private String[] columnNames;
-String   Score;
-Boolean ChoosePre;
+    private String score;
+    private boolean choosePre;
    // ResultSet Score;
 
     public FormQueryAthleteScore() {
         frame = new JFrame("Query Score");
         frame.setLocationByPlatform(true);
-        frame.setContentPane(this.JpanelQueryScore);
+        frame.setContentPane(this.panelQueryScore);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        ButtonGroup PreOrFinal= new ButtonGroup();
-        PreOrFinal.add(FINALRadioButton);
-        PreOrFinal.add(PRERadioButton);
+        ButtonGroup preOrFinal= new ButtonGroup();
+        preOrFinal.add(radioButtonFianl);
+        preOrFinal.add(radioButtonPre);
 
-        FINALRadioButton.addActionListener(new ActionListener() {
+        radioButtonFianl.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ChoosePre = false;
+                choosePre = false;
             }
         });
-        PRERadioButton.addActionListener(new ActionListener() {
+        radioButtonPre.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ChoosePre = true;
+                choosePre = true;
             }
         });
 
@@ -47,11 +47,11 @@ Boolean ChoosePre;
             public void actionPerformed(ActionEvent e) {
                 String eventName = textFieldEventName.getText();
                 String AthleteID = textFieldAthleteID.getText();
-                if(ChoosePre)
-                Score = SQLiteJDBC.queryPreScore(eventName, AthleteID);
+                if(choosePre)
+                    score = SQLiteJDBC.queryPreScore(eventName, AthleteID);
                 else
-                    Score = SQLiteJDBC.queryFinalScore(eventName, AthleteID);
-                JOptionPane.showMessageDialog(frame, "your Score is" + Score);
+                    score = SQLiteJDBC.queryFinalScore(eventName, AthleteID);
+                JOptionPane.showMessageDialog(frame, "your Score is" + score);
                 frame.dispose();
             }
         });

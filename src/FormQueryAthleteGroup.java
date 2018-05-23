@@ -27,7 +27,7 @@ public class FormQueryAthleteGroup {
                 String eventName = textFieldEventName.getText();
                 String athleteID = textFieldAthleteID.getText();
 
-                // group = SQLiteJDBC.queryGroup(eventName, athleteID);
+                group = SQLiteJDBC.queryGroup(eventName, athleteID);
                 JOptionPane.showMessageDialog(frame, "Your Group Is" + group);
                 frame.dispose();
             }

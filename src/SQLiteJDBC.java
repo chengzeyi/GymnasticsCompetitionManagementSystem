@@ -15,7 +15,6 @@ public class SQLiteJDBC {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
         }
-        System.out.println("Opened database successfully");
     }
 
     public static void closeConnection(){
@@ -25,7 +24,6 @@ public class SQLiteJDBC {
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
         }
-        System.out.println("Closed database successfully");
     }
 
     public static void adminSetTeamInfo(String teamName, String teamAccount, String teamPassword) {
@@ -34,7 +32,6 @@ public class SQLiteJDBC {
         PreparedStatement preparedStatement;
         ResultSet rs;
 
-        System.out.println("Checking if TeamName exists");
         try {
             executeSql = "SELECT * FROM TeamEntry WHERE TeamName = ?";
             preparedStatement = conn.prepareStatement(executeSql);
@@ -45,7 +42,6 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
         if(find){
-            System.out.println("TeamName exists, trying to update table");
             try {
                 executeSql = "UPDATE TeamEntry SET TeamAccount = ?, TeamPassword = ? WHERE TeamName = ?";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -58,7 +54,6 @@ public class SQLiteJDBC {
             }
         }
         else{
-            System.out.println("TeamName doesn't exist, trying to insert into table");
             try {
                 executeSql = "INSERT INTO TeamEntry (TeamName, TeamAccount, TeamPassword) VALUES (?, ?, ?)";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -70,7 +65,6 @@ public class SQLiteJDBC {
                 e.printStackTrace();
             }
         }
-        System.out.println("Finished setting TeamInfo by admin");
     }
 
     public static void adminSetEventInfo(String eventName, String maxPeopleNumberPerTeam, String maxOnCourtPeopleNumberPerGame, String teamScoreThresholdPeopleNumber, int athleteSex) {
@@ -79,7 +73,6 @@ public class SQLiteJDBC {
         PreparedStatement preparedStatement;
         ResultSet rs;
 
-        System.out.println("Checking if EventName exists");
         try {
             executeSql = "SELECT * FROM EventInfo WHERE EventName = ?";
             preparedStatement = conn.prepareStatement(executeSql);
@@ -90,7 +83,6 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
         if(find){
-            System.out.println("EventName exists, trying to update table");
             try {
                 executeSql = "UPDATE EventInfo SET MaxPeopleNumberPerTeam = ?, MaxOnCourtPeopleNumberPerGame = ?, TeamScoreThresholdPeopleNumber = ?, AthleteSex = ? WHERE EventName = ?";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -105,7 +97,6 @@ public class SQLiteJDBC {
             }
         }
         else{
-            System.out.println("EventName doesn't exist, trying to insert into table");
             try {
                 executeSql = "INSERT INTO EventInfo (EventName, MaxPeopleNumberPerTeam, MaxOnCourtPeopleNumberPerGame, TeamScoreThresholdPeopleNumber) VALUES (?, ?, ?, ?)";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -118,7 +109,6 @@ public class SQLiteJDBC {
                 e.printStackTrace();
             }
         }
-        System.out.println("Finished setting EventInfo by admin");
     }
 
     public static boolean authenticateTeam(String teamAccount, String teamPassword){
@@ -127,7 +117,6 @@ public class SQLiteJDBC {
         PreparedStatement preparedStatement;
         ResultSet rs;
 
-        System.out.println("Authenticating team account");
         try {
             executeSql = "SELECT * FROM TeamEntry WHERE TeamAccount = ? AND TeamPassword = ?";
             preparedStatement = conn.prepareStatement(executeSql);
@@ -137,11 +126,6 @@ public class SQLiteJDBC {
             ok = rs.next();
         } catch (Exception e){
             e.printStackTrace();
-        }
-        if(ok){
-            System.out.println("Finished authenticating team");
-        } else {
-            System.out.println("Failed authenticating team");
         }
         return ok;
     }
@@ -164,7 +148,6 @@ public class SQLiteJDBC {
         PreparedStatement preparedStatement;
         ResultSet rs;
 
-        System.out.println("Checking if TeamAccount and TeamPassword are right");
         try {
             executeSql = "SELECT * FROM TeamEntry WHERE TeamAccount = ? AND TeamPassword = ?";
             preparedStatement = conn.prepareStatement(executeSql);
@@ -176,10 +159,8 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
         if(!find) {
-            System.out.println("TeamAccount and TeamPassword are not right, cannot finish team compulsive signing up");
         } else {
             try {
-                System.out.println("TeamAccount and TeamPassword are right, trying to update table");
                 executeSql = "UPDATE TeamEntry SET LeaderName = ?, LeaderID = ?, LeaderTel = ?, DoctorName = ?, DoctorID = ?, DoctorTel = ?, CoachName = ?, CoachID = ?, CoachTel = ?, CoachSex = ? WHERE TeamAccount = ? AND TeamPassword = ?";
                 preparedStatement = conn.prepareStatement(executeSql);
                 preparedStatement.setString(1, leaderName);
@@ -198,7 +179,6 @@ public class SQLiteJDBC {
             } catch (Exception e){
                 e.printStackTrace();
             }
-            System.out.println("Finished setting compulsive information of team signing up");
         }
     }
 
@@ -225,10 +205,8 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
         if(!find) {
-            System.out.println("TeamAccount and TeamPassword are not right, cannot finish team optional signing up");
         } else {
             try {
-                System.out.println("TeamAccount and TeamPassword are right, trying to update table");
                 executeSql = "UPDATE TeamEntry SET RefereeName = ?, RefereeID = ?, RefereeTel = ? WHERE TeamAccount = ? AND TeamPassword = ?";
                 preparedStatement = conn.prepareStatement(executeSql);
                 preparedStatement.setString(1, refereeName);
@@ -240,7 +218,6 @@ public class SQLiteJDBC {
             } catch (Exception e){
                 e.printStackTrace();
             }
-            System.out.println("Finished setting optional information of team signing up");
         }
     }
 
@@ -257,7 +234,6 @@ public class SQLiteJDBC {
         PreparedStatement preparedStatement;
         ResultSet rs;
 
-        System.out.println("Checking if TeamName exists");
         try {
             executeSql = "SELECT * FROM TeamEntry WHERE TeamName = ?";
             preparedStatement = conn.prepareStatement(executeSql);
@@ -268,22 +244,33 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
         if(!find) {
-            System.out.println("TeamName doesn't exist, cannot finish athlete compulsive signing up");
         } else {
             try {
-                System.out.println("TeamName exists, trying to update table");
-                executeSql = "INSERT INTO AthleteEntry (AthleteName, AthleteID, AthleteAge, AthlegeSex, AgeGroup) VALUES (?, ?, ?, ?, ?)";
+                executeSql = "INSERT INTO AthleteEntry (AthleteName, AthleteID, AthleteAge, AthleteSex, AgeGroup) VALUES (?, ?, ?, ?, ?)";
                 preparedStatement = conn.prepareStatement(executeSql);
                 preparedStatement.setString(1, athleteName);
                 preparedStatement.setString(2, athleteID);
                 preparedStatement.setInt(3, athleteAge);
                 preparedStatement.setInt(4, athleteSex);
                 preparedStatement.setString(5, ageGroup);
-                preparedStatement.executeQuery();
+                preparedStatement.executeUpdate();
             } catch (Exception e){
                 e.printStackTrace();
             }
-            System.out.println("Finished setting compulsive information of team signing up");
+        }
+    }
+
+    public static void athleteSignUpEvent(String athleteID, String eventName) {
+        String executeSql;
+        PreparedStatement preparedStatement;
+
+        try {
+            executeSql = "INSERT INTO PreAthleteEvent (AthleteID, EventName) VALUES (?, ?)";
+            preparedStatement = conn.prepareStatement(executeSql);
+            preparedStatement.setString(1, athleteID);
+            preparedStatement.setString(2, eventName);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -410,7 +397,6 @@ public class SQLiteJDBC {
         PreparedStatement preparedStatement;
         ResultSet rs;
 
-        System.out.println("Checking if EventName and AthleteID exist");
         try {
             executeSql = "SELECT * FROM FinalAthleteEvent WHERE EventName = ? and AthleteID=?";
             preparedStatement = conn.prepareStatement(executeSql);
@@ -422,7 +408,6 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
         if (find) {
-            System.out.println("EventName and AthleteID exist, trying to update table");
             try {
                 executeSql = "UPDATE FinalAthleteEvent SET EventName = ?, AthleteID = ?, EventGroup = ?";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -435,7 +420,6 @@ public class SQLiteJDBC {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("EventName and AthleteID don't exist, trying to insert into table");
             try {
                 executeSql = "INSERT INTO FinalAthleteEvent (EventName, AthleteID,EventGroup) VALUES (?, ?, ?)";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -447,7 +431,6 @@ public class SQLiteJDBC {
                 e.printStackTrace();
             }
         }
-        System.out.println("Finished assigning group");
     }
 
     public static ResultSet queryTeamRanking() {
@@ -472,7 +455,6 @@ public class SQLiteJDBC {
         PreparedStatement preparedStatement;
         ResultSet rs;
 
-        System.out.println("Checking if EventName and AthleteID exist");
         try {
             executeSql = "SELECT * FROM FinalAthleteScore WHERE EventName = ? and AthleteID = ?";
             preparedStatement = conn.prepareStatement(executeSql);
@@ -484,7 +466,6 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
         if (find) {
-            System.out.println("EventName and AthleteID exist, trying to update table");
             try {
                 executeSql = "UPDATE FinalAthleteScore SET EventName = ?, AthleteID = ?, Score = ?";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -497,7 +478,6 @@ public class SQLiteJDBC {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("EventName and AthleteID don't exist, trying to insert into table");
             try {
                 executeSql = "INSERT INTO FinalAthleteScore (EventName, AthleteID, Score) VALUES (?, ?, ?)";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -509,7 +489,6 @@ public class SQLiteJDBC {
                 e.printStackTrace();
             }
         }
-        System.out.println("Finished setting EventInfo by admin");
     }
 
     public static void judgePreScore(String eventName, String athleteID, String score) {
@@ -518,8 +497,6 @@ public class SQLiteJDBC {
         PreparedStatement preparedStatement;
         ResultSet rs;
 
-        String checking_if_eventName_exists = "Checking if EventName and AthleteID exist";
-        System.out.println(checking_if_eventName_exists);
         try {
             executeSql = "SELECT * FROM PreAthleteScore WHERE EventName = ? and AthleteID= ?";
             preparedStatement = conn.prepareStatement(executeSql);
@@ -531,7 +508,6 @@ public class SQLiteJDBC {
             e.printStackTrace();
         }
         if (find) {
-            System.out.println("EventName and AthleteID exist, trying to update table");
             try {
                 executeSql = "UPDATE PreAthleteScore SET EventName = ?, AthleteID= ?, Score = ?";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -544,7 +520,6 @@ public class SQLiteJDBC {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("EventName and AthleteID don't exist, trying to insert into table");
             try {
                 executeSql = "INSERT INTO PreAthleteScore(EventName, AthleteID,Score) VALUES (?, ?, ?)";
                 preparedStatement = conn.prepareStatement(executeSql);
@@ -556,6 +531,53 @@ public class SQLiteJDBC {
                 e.printStackTrace();
             }
         }
-        System.out.println("Finished judging pre score");
+    }
+
+    public static ResultSet getAllTeamName() {
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs = null;
+
+        try {
+            executeSql = "SELECT TeamName FROM TeamEntry";
+            preparedStatement = conn.prepareStatement(executeSql);
+            rs = preparedStatement.executeQuery();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rs;
+    }
+
+    public static ResultSet getAllEventName() {
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs = null;
+
+        try {
+            executeSql = "SELECT EventName From EventInfo";
+            preparedStatement = conn.prepareStatement(executeSql);
+            rs = preparedStatement.executeQuery();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rs;
+    }
+
+    public static void dumpFromPreToFinal(String eventName, String ageGroup) {
+        String executeSql;
+        PreparedStatement preparedStatement;
+        ResultSet rs;
+
+        try {
+            executeSql = "SELECT AthleteID, Score FROM PreAthleteScore AS P1 WHERE P1.EventName = ? AND P1.AthleteID IN (SELECT AthleteID FROM AthleteEntry WHERE AgeGroup = ?) AND (SELECT COUNT(*) FROM PreAthleteScore AS P2 WHERE P2.EventName = ? AND P2.Score > P1.Score AND P2.AthleteID IN (SELECT P1.AthleteID FROM AthleteEntry WHERE AgeGroup = ?)) < (SELECT MAX(MaxOnCourtPeopleNumberPerGame) FROM EventInfo WHERE EventInfo.EventName = ?)";
+            preparedStatement = conn.prepareStatement(executeSql);
+            preparedStatement.setString(1, eventName);
+            preparedStatement.setString(2, ageGroup);
+            preparedStatement.setString(3, eventName);
+            preparedStatement.setString(4, eventName);
+            rs = preparedStatement.executeQuery();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

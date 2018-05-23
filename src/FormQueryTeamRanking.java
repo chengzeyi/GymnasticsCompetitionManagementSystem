@@ -1,5 +1,4 @@
 
-
 import javax.swing.*;
         import javax.swing.table.DefaultTableModel;
         import javax.swing.table.TableModel;
@@ -16,9 +15,7 @@ public class FormQueryTeamRanking {
     private JTable tableTeamRanking;
     private JScrollPane JScrollPaneTeamRanking;
     private JPanel JPanelTeamRanking;
-
     private JFrame frame;
-
     private DefaultTableModel defaultTableModel;
     private String[] columnNames;
 
@@ -34,8 +31,7 @@ public class FormQueryTeamRanking {
         defaultTableModel = new DefaultTableModel();
         defaultTableModel.setColumnIdentifiers(columnNames);
         try {
-            ResultSet resultSet = null;
-            // SQLiteJDBC.QueryTeamRanking()
+            ResultSet resultSet = SQLiteJDBC.queryTeamRanking();
             int columnCount = resultSet.getMetaData().getColumnCount();
             while (resultSet.next()) {
                 Object[] objects = new Object[columnCount];

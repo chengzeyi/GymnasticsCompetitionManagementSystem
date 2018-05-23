@@ -8,8 +8,8 @@ public class FormJudgeAthleteScore {
     private JTextField textFieldAthleteID;
     private JTextField textFieldScore1;
     private JTextField textFieldEventName;
-    private JButton OKButton;
-    private JButton cancelButton;
+    private JButton buttonOK;
+    private JButton buttonCancel;
     private JPanel panelFormJudgeScore;
     private JTextField textFieldScore2;
     private JTextField textFieldScore3;
@@ -47,7 +47,7 @@ public class FormJudgeAthleteScore {
             }
         });
 
-        OKButton.addActionListener(new ActionListener() {
+        buttonOK.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String eventName = textFieldEventName.getText();
@@ -72,7 +72,7 @@ public class FormJudgeAthleteScore {
             }
         });
 
-        cancelButton.addActionListener(new ActionListener() {
+        buttonCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
