@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="FormMain">
-  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="10" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="12" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="1206" height="400"/>
@@ -11,14 +11,9 @@
     </properties>
     <border type="none"/>
     <children>
-      <vspacer id="9ce0a">
-        <constraints>
-          <grid row="1" column="1" row-span="3" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
       <component id="fe453" class="javax.swing.JButton" binding="buttonAdminSetTeamInfo">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Admin Set Team Info"/>
@@ -26,7 +21,7 @@
       </component>
       <component id="1c3ef" class="javax.swing.JButton" binding="buttonAdminSetEventInfo">
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Admin Set Event Info"/>
@@ -34,7 +29,7 @@
       </component>
       <component id="fe37" class="javax.swing.JButton" binding="buttonTeamSignUp">
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Team Sign up"/>
@@ -42,7 +37,7 @@
       </component>
       <component id="8eb98" class="javax.swing.JButton" binding="buttonAthleteEntry">
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Athlete Entry"/>
@@ -50,7 +45,7 @@
       </component>
       <component id="2605b" class="javax.swing.JButton" binding="buttonAssignAthleteGroup">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Assign Athlete Group"/>
@@ -58,7 +53,7 @@
       </component>
       <component id="7dd79" class="javax.swing.JButton" binding="buttonQueryAthleteGroup">
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Query Athlete Group"/>
@@ -66,7 +61,7 @@
       </component>
       <component id="943a9" class="javax.swing.JButton" binding="buttonJudgeAthleteScore">
         <constraints>
-          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Judge Athlete Score"/>
@@ -74,7 +69,7 @@
       </component>
       <component id="cb306" class="javax.swing.JButton" binding="buttonQueryAthleteScore">
         <constraints>
-          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Query Athlete Score"/>
@@ -82,20 +77,34 @@
       </component>
       <component id="36c10" class="javax.swing.JButton" binding="buttonQueryTeamRanking">
         <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Query Team Ranking"/>
+        </properties>
+      </component>
+      <component id="22301" class="javax.swing.JButton" binding="buttonDumpFromPreToFinal">
+        <constraints>
+          <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Dump From Pre To Final"/>
+        </properties>
+      </component>
+      <component id="762b" class="javax.swing.JButton" binding="buttonQueryAthleteRanking">
+        <constraints>
           <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="QueryTeamRanking"/>
+          <text value="Query Athlete Ranking"/>
         </properties>
       </component>
-      <component id="f222a" class="javax.swing.JLabel">
+      <component id="72ee6" class="javax.swing.JButton" binding="buttonAutoNumber">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <font size="24"/>
-          <requestFocusEnabled value="true"/>
-          <text value="Gymnastics Competition Management System"/>
+          <text value="Auto Number"/>
         </properties>
       </component>
     </children>

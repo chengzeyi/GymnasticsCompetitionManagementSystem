@@ -14,154 +14,131 @@
     <table id="6" parent="2" name="AthleteEntry"/>
     <table id="7" parent="2" name="EventInfo"/>
     <table id="8" parent="2" name="FinalAthleteEvent"/>
-    <table id="9" parent="2" name="FinalAthleteScore"/>
-    <table id="10" parent="2" name="FinalEventInfo"/>
-    <table id="11" parent="2" name="PreAthleteEvent"/>
-    <table id="12" parent="2" name="PreAthleteScore"/>
-    <table id="13" parent="2" name="PreEventInfo"/>
-    <table id="14" parent="2" name="TeamEntry"/>
-    <table id="15" parent="2" name="sqlite_master">
+    <table id="9" parent="2" name="FinalEventInfo"/>
+    <table id="10" parent="2" name="PreAthleteEvent"/>
+    <table id="11" parent="2" name="PreEventInfo"/>
+    <table id="12" parent="2" name="TeamEntry"/>
+    <table id="13" parent="2" name="sqlite_master">
       <System>1</System>
     </table>
-    <column id="16" parent="6" name="AthleteName">
+    <column id="14" parent="6" name="AthleteName">
       <Position>1</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="17" parent="6" name="AthleteID">
+    <column id="15" parent="6" name="AthleteID">
       <Position>2</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="18" parent="6" name="AthleteAge">
+    <column id="16" parent="6" name="AthleteAge">
       <Position>3</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <column id="19" parent="6" name="AthleteSex">
+    <column id="17" parent="6" name="AthleteSex">
       <Position>4</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <column id="20" parent="6" name="AgeGroup">
+    <column id="18" parent="6" name="AgeGroup">
       <Position>5</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="21" parent="6" name="TeamName">
+    <column id="19" parent="6" name="TeamName">
       <Position>6</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="22" parent="6" name="AthleteNumber">
+    <column id="20" parent="6" name="AthleteNumber">
       <Position>7</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <index id="23" parent="6" name="sqlite_autoindex_AthleteEntry_1">
+    <index id="21" parent="6" name="sqlite_autoindex_AthleteEntry_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AthleteID</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="24" parent="6">
+    <key id="22" parent="6">
       <ColNames>AthleteID</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_AthleteEntry_1</UnderlyingIndexName>
     </key>
-    <foreign-key id="25" parent="6">
+    <foreign-key id="23" parent="6">
       <ColNames>TeamName</ColNames>
       <RefTableName>TeamEntry</RefTableName>
       <RefColNames>TeamName</RefColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="26" parent="7" name="EventName">
+    <column id="24" parent="7" name="EventName">
       <Position>1</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="27" parent="7" name="MaxPeopleNumberPerTeam">
+    <column id="25" parent="7" name="MaxPeopleNumberPerTeam">
       <Position>2</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <column id="28" parent="7" name="MaxOnCourtPeopleNumberPerGame">
+    <column id="26" parent="7" name="MaxOnCourtPeopleNumberPerGame">
       <Position>3</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <column id="29" parent="7" name="TeamScoreThresholdPeopleNumber">
+    <column id="27" parent="7" name="TeamScoreThresholdPeopleNumber">
       <Position>4</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <column id="30" parent="7" name="AthleteSex">
+    <column id="28" parent="7" name="AthleteSex">
       <Position>5</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <index id="31" parent="7" name="sqlite_autoindex_EventInfo_1">
+    <index id="29" parent="7" name="sqlite_autoindex_EventInfo_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>EventName</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="32" parent="7">
+    <key id="30" parent="7">
       <ColNames>EventName</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_EventInfo_1</UnderlyingIndexName>
     </key>
-    <column id="33" parent="8" name="EventName">
+    <column id="31" parent="8" name="EventName">
       <Position>1</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="34" parent="8" name="AthleteID">
+    <column id="32" parent="8" name="AthleteID">
       <Position>2</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="35" parent="8" name="EventGroup">
+    <column id="33" parent="8" name="EventGroup">
       <Position>3</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <index id="36" parent="8" name="sqlite_autoindex_FinalAthleteEvent_1">
+    <column id="34" parent="8" name="Score">
+      <Position>4</Position>
+      <DataType>INT|0s</DataType>
+    </column>
+    <index id="35" parent="8" name="sqlite_autoindex_FinalAthleteEvent_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>EventName
 AthleteID</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="37" parent="8">
+    <key id="36" parent="8">
       <ColNames>EventName
 AthleteID</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_FinalAthleteEvent_1</UnderlyingIndexName>
     </key>
-    <column id="38" parent="9" name="AthleteID">
+    <column id="37" parent="9" name="EventName">
       <Position>1</Position>
-      <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="39" parent="9" name="EventName">
+    <column id="38" parent="9" name="AgeGroup">
       <Position>2</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="40" parent="9" name="Score">
-      <Position>3</Position>
-      <DataType>INT|0s</DataType>
-    </column>
-    <index id="41" parent="9" name="sqlite_autoindex_FinalAthleteScore_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>AthleteID
-EventName</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="42" parent="9">
-      <ColNames>AthleteID
-EventName</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_FinalAthleteScore_1</UnderlyingIndexName>
-    </key>
-    <column id="43" parent="10" name="EventName">
-      <Position>1</Position>
-    </column>
-    <column id="44" parent="10" name="AgeGroup">
-      <Position>2</Position>
-      <DataType>VARCHAR(255)|0s</DataType>
-    </column>
-    <column id="45" parent="10" name="RefereeID">
+    <column id="39" parent="9" name="RefereeID">
       <Position>3</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <index id="46" parent="10" name="sqlite_autoindex_FinalEventInfo_1">
+    <index id="40" parent="9" name="sqlite_autoindex_FinalEventInfo_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>EventName
 AgeGroup
@@ -169,75 +146,54 @@ RefereeID</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="47" parent="10">
+    <key id="41" parent="9">
       <ColNames>EventName
 AgeGroup
 RefereeID</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_FinalEventInfo_1</UnderlyingIndexName>
     </key>
-    <column id="48" parent="11" name="EventName">
+    <column id="42" parent="10" name="EventName">
       <Position>1</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="49" parent="11" name="AthleteID">
+    <column id="43" parent="10" name="AthleteID">
       <Position>2</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="50" parent="11" name="EventGroup">
+    <column id="44" parent="10" name="EventGroup">
       <Position>3</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <index id="51" parent="11" name="sqlite_autoindex_PreAthleteEvent_1">
+    <column id="45" parent="10" name="Score">
+      <Position>4</Position>
+      <DataType>INT|0s</DataType>
+    </column>
+    <index id="46" parent="10" name="sqlite_autoindex_PreAthleteEvent_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>EventName
 AthleteID</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="52" parent="11">
+    <key id="47" parent="10">
       <ColNames>EventName
 AthleteID</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_PreAthleteEvent_1</UnderlyingIndexName>
     </key>
-    <column id="53" parent="12" name="AthleteID">
+    <column id="48" parent="11" name="EventName">
       <Position>1</Position>
-      <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="54" parent="12" name="EventName">
+    <column id="49" parent="11" name="AgeGroup">
       <Position>2</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="55" parent="12" name="Score">
-      <Position>3</Position>
-      <DataType>INT|0s</DataType>
-    </column>
-    <index id="56" parent="12" name="sqlite_autoindex_PreAthleteScore_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>AthleteID
-EventName</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="57" parent="12">
-      <ColNames>AthleteID
-EventName</ColNames>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_PreAthleteScore_1</UnderlyingIndexName>
-    </key>
-    <column id="58" parent="13" name="EventName">
-      <Position>1</Position>
-    </column>
-    <column id="59" parent="13" name="AgeGroup">
-      <Position>2</Position>
-      <DataType>VARCHAR(255)|0s</DataType>
-    </column>
-    <column id="60" parent="13" name="RefereeID">
+    <column id="50" parent="11" name="RefereeID">
       <Position>3</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <index id="61" parent="13" name="sqlite_autoindex_PreEventInfo_1">
+    <index id="51" parent="11" name="sqlite_autoindex_PreEventInfo_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>EventName
 AgeGroup
@@ -245,115 +201,115 @@ RefereeID</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="62" parent="13">
+    <key id="52" parent="11">
       <ColNames>EventName
 AgeGroup
 RefereeID</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_PreEventInfo_1</UnderlyingIndexName>
     </key>
-    <column id="63" parent="14" name="TeamName">
+    <column id="53" parent="12" name="TeamName">
       <Position>1</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="64" parent="14" name="LeaderName">
+    <column id="54" parent="12" name="LeaderName">
       <Position>2</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="65" parent="14" name="LeaderID">
+    <column id="55" parent="12" name="LeaderID">
       <Position>3</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="66" parent="14" name="LeaderTel">
+    <column id="56" parent="12" name="LeaderTel">
       <Position>4</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="67" parent="14" name="DoctorName">
+    <column id="57" parent="12" name="DoctorName">
       <Position>5</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="68" parent="14" name="DoctorID">
+    <column id="58" parent="12" name="DoctorID">
       <Position>6</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="69" parent="14" name="DoctorTel">
+    <column id="59" parent="12" name="DoctorTel">
       <Position>7</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="70" parent="14" name="CoachName">
+    <column id="60" parent="12" name="CoachName">
       <Position>8</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="71" parent="14" name="CoachID">
+    <column id="61" parent="12" name="CoachID">
       <Position>9</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="72" parent="14" name="CoachTel">
+    <column id="62" parent="12" name="CoachTel">
       <Position>10</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="73" parent="14" name="CoachSex">
+    <column id="63" parent="12" name="CoachSex">
       <Position>11</Position>
       <DataType>INT|0s</DataType>
     </column>
-    <column id="74" parent="14" name="RefereeName">
+    <column id="64" parent="12" name="RefereeName">
       <Position>12</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="75" parent="14" name="RefereeID">
+    <column id="65" parent="12" name="RefereeID">
       <Position>13</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="76" parent="14" name="RefereeTel">
+    <column id="66" parent="12" name="RefereeTel">
       <Position>14</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="77" parent="14" name="TeamAccount">
+    <column id="67" parent="12" name="TeamAccount">
       <Position>15</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <column id="78" parent="14" name="TeamPassword">
+    <column id="68" parent="12" name="TeamPassword">
       <Position>16</Position>
       <DataType>VARCHAR(255)|0s</DataType>
     </column>
-    <index id="79" parent="14" name="sqlite_autoindex_TeamEntry_1">
+    <index id="69" parent="12" name="sqlite_autoindex_TeamEntry_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>TeamName</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <index id="80" parent="14" name="sqlite_autoindex_TeamEntry_2">
+    <index id="70" parent="12" name="sqlite_autoindex_TeamEntry_2">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>TeamAccount</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="81" parent="14">
+    <key id="71" parent="12">
       <ColNames>TeamName</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>sqlite_autoindex_TeamEntry_1</UnderlyingIndexName>
     </key>
-    <key id="82" parent="14">
+    <key id="72" parent="12">
       <ColNames>TeamAccount</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_TeamEntry_2</UnderlyingIndexName>
     </key>
-    <column id="83" parent="15" name="type">
+    <column id="73" parent="13" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="84" parent="15" name="name">
+    <column id="74" parent="13" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="85" parent="15" name="tbl_name">
+    <column id="75" parent="13" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="86" parent="15" name="rootpage">
+    <column id="76" parent="13" name="rootpage">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
     </column>
-    <column id="87" parent="15" name="sql">
+    <column id="77" parent="13" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>

@@ -16,6 +16,9 @@ public class FormMain {
     private JButton buttonJudgeAthleteScore;
     private JButton buttonQueryAthleteScore;
     private JButton buttonQueryTeamRanking;
+    private JButton buttonDumpFromPreToFinal;
+    private JButton buttonQueryAthleteRanking;
+    private JButton buttonAutoNumber;
     private JFrame frame;
 
     public FormMain() {
@@ -78,6 +81,25 @@ public class FormMain {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new FormQueryTeamRanking();
+            }
+        });
+        buttonDumpFromPreToFinal.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FormDumpFromPreToFinal();
+            }
+        });
+        buttonQueryAthleteRanking.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new FormQueryAthleteRanking();
+            }
+        });
+        buttonAutoNumber.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SQLiteJDBC.numberAllAthlete();
+                JOptionPane.showMessageDialog(frame, "Finished Numbering");
             }
         });
     }

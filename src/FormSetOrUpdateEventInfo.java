@@ -41,7 +41,7 @@ public class FormSetOrUpdateEventInfo {
                 if(eventName.isEmpty() || maxPeopleNumberPerTeam.isEmpty() || maxOnCourtPeopleNumberPerGame.isEmpty() || teamScoreThresholdPeopleNumber.isEmpty() || athleteSex == -1){
                     JOptionPane.showMessageDialog(frame, "Event Info Is Not Complete");
                 } else {
-                    SQLiteJDBC.adminSetEventInfo(eventName, maxPeopleNumberPerTeam, maxOnCourtPeopleNumberPerGame, teamScoreThresholdPeopleNumber, athleteSex);
+                    SQLiteJDBC.adminSetEventInfo(eventName, Integer.valueOf(maxPeopleNumberPerTeam), Integer.valueOf(maxOnCourtPeopleNumberPerGame), Integer.valueOf(teamScoreThresholdPeopleNumber), athleteSex);
                     JOptionPane.showMessageDialog(frame,"Set Or Update Event Info: Procedure Finished");
                     frame.dispose();
                 }
